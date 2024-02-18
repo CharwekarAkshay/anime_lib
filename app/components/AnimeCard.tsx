@@ -19,16 +19,16 @@ const AnimeCard = (props: AnimeCardProps) => {
           width={100}
           height={200}
         />
-        <div className="flex flex-col gap-1">
-          <div className="tracking-wide text-lime-300">{anime.title}</div>
+        <div className="flex flex-col justify-evenly  gap-1">
+          <div className="text-primary-300 tracking-wide">{anime.title}</div>
           <div>{anime.rating}</div>
+          <div className="line-clamp-2">{anime.synopsis}</div>
           <Rating
             readOnly
             value={anime.score}
             items={10}
             className="max-w-[50%]"
           />
-          <div className="line-clamp-2">{anime.synopsis}</div>
         </div>
       </div>
     </div>
