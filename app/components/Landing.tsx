@@ -2,23 +2,29 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
+import { FaChevronDown } from "react-icons/fa";
 
 const Landing = () => {
   return (
-    <LandingContainer>
-      <motion.h1
-        initial={{ opacity: 0.5, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.3,
-          duration: 0.8,
-          ease: "easeInOut",
-        }}
-        className="mt-8 bg-clip-text py-4"
-      >
-        <Image src="/home.png" width={700} height={700} alt="GokuVsLuffy" />
-      </motion.h1>
-    </LandingContainer>
+    <div className="relative">
+      <LandingContainer>
+        <motion.h1
+          initial={{ opacity: 0.5, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          className="mt-8 bg-clip-text py-4"
+        >
+          <Image src="/home.png" width={700} height={700} alt="GokuVsLuffy" />
+        </motion.h1>
+      </LandingContainer>
+      <div className="absolute bottom-20 left-[50%] -translate-x-1/2 transform">
+        <FaChevronDown className="text-primary-500 text-2xl" />
+      </div>
+    </div>
   );
 };
 
@@ -82,7 +88,7 @@ export const LandingContainer = ({
             duration: 0.8,
             ease: "easeInOut",
           }}
-          className="absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full bg-primary-400 blur-2xl"
+          className="bg-primary-400 absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full blur-2xl"
         ></motion.div>
         <motion.div
           initial={{ width: "15rem" }}
@@ -92,7 +98,7 @@ export const LandingContainer = ({
             duration: 0.8,
             ease: "easeInOut",
           }}
-          className="absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[7rem] bg-primary-400 "
+          className="bg-primary-400 absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[7rem] "
         ></motion.div>
 
         <div className="bg-primary-background absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] "></div>
