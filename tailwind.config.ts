@@ -11,7 +11,7 @@ const config: Config = {
     extend: {
       colors: {
         "primary-background": colors.slate[900],
-        primary: colors.indigo,
+        primary: colors.orange,
       },
     },
   },

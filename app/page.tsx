@@ -1,7 +1,6 @@
 import { fetchAnime } from "./actions";
 import AnimeCardGrid from "./components/AnimeCardGrid";
 import Landing from "./components/Landing";
-import LoadMore from "./components/LoadMore";
 
 export default async function Home() {
   const anime: AnimePaginatedResponse = await fetchAnime(1);
@@ -11,7 +10,6 @@ export default async function Home() {
       <div className="sm:px-10 md:px-20 lg:px-32 xl:px-40">
         <Landing />
         <AnimeCardGrid animes={animeData} />
-        <LoadMore />
       </div>
     </main>
   );
