@@ -1,4 +1,8 @@
 import Image from "next/image";
+import { Rating } from "@smastrom/react-rating";
+
+import "@smastrom/react-rating/style.css";
+
 interface AnimeCardProps {
   anime: AnimeData;
   className?: string;
@@ -18,7 +22,12 @@ const AnimeCard = (props: AnimeCardProps) => {
         <div className="flex flex-col gap-1">
           <div className="tracking-wide text-lime-300">{anime.title}</div>
           <div>{anime.rating}</div>
-          <div>{anime.score}</div>
+          <Rating
+            readOnly
+            value={anime.score}
+            items={10}
+            className="max-w-[50%]"
+          />
           <div className="line-clamp-2">{anime.synopsis}</div>
         </div>
       </div>
