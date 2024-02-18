@@ -1,12 +1,12 @@
 "use client";
 
-import { AnimatePresence, motion, useInView } from "framer-motion";
+import { AnimatePresence, motion, useInView, useScroll } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { MdErrorOutline } from "react-icons/md";
 import { fetchAnime } from "../actions";
 import AnimeCard from "./AnimeCard";
 import Spinner from "./Spinner";
-import { MdErrorOutline } from "react-icons/md";
 
 interface AnimeCardGridProps {
   animes: AnimeData[];
@@ -22,6 +22,12 @@ const AnimeCardGrid = (props: AnimeCardGridProps) => {
 
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref);
+
+  const topTrendingRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: topTrendingRef,
+    offset: ["end end", "start start"],
+  });
 
   useEffect(() => {
     if (isInView && !isError) {
@@ -41,6 +47,14 @@ const AnimeCardGrid = (props: AnimeCardGridProps) => {
 
   return (
     <>
+      <div className="bg-primary-background sticky top-0 z-50 flex flex-row items-center gap-2 px-2 py-5">
+        <div className="text-5xl">Top Trending</div>
+        <motion.div
+          className="bg-primary-500 h-2 flex-1 origin-left rounded-lg"
+          ref={topTrendingRef}
+          style={{ scaleX: scrollYProgress }}
+        ></motion.div>
+      </div>
       <div className="grid grid-cols-1 py-10  md:grid-cols-2  lg:grid-cols-3">
         {animeData.map((anime, index) => (
           <Link
