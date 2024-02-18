@@ -1,17 +1,35 @@
 import Image from "next/image";
 import { Rating } from "@smastrom/react-rating";
+import { motion } from "framer-motion";
 
 import "@smastrom/react-rating/style.css";
 
 interface AnimeCardProps {
   anime: AnimeData;
   className?: string;
+  index: number;
 }
 
+const variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
+
 const AnimeCard = (props: AnimeCardProps) => {
-  const { anime, className } = props;
+  const { anime, className, index } = props;
   return (
-    <div className="relative z-20 h-full w-full overflow-hidden rounded-2xl p-4 group-hover:border-slate-700">
+    <motion.div
+      className="relative z-20 h-full w-full overflow-hidden rounded-2xl p-4 group-hover:border-slate-700"
+      initial="hidden"
+      animate="visible"
+      transition={{
+        delay: Math.log(index + 1) * 0.75,
+        ease: "easeInOut",
+        duration: 0.5,
+      }}
+      viewport={{ amount: 0 }}
+      variants={variants}
+    >
       <div className="z-50 flex gap-5">
         <Image
           src={anime.images.jpg.image_url}
@@ -31,7 +49,7 @@ const AnimeCard = (props: AnimeCardProps) => {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

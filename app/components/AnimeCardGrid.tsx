@@ -31,7 +31,7 @@ const AnimeCardGrid = (props: AnimeCardGridProps) => {
           setAnimeData([...animeData, ...animeDataResponse]);
           setCurrentPage(res.pagination.current_page + 1);
           // * Testing purpose only. Rate limiter
-          // setIsError(true);
+          setIsError(true);
         })
         .catch(() => {
           setIsError(true);
@@ -70,7 +70,7 @@ const AnimeCardGrid = (props: AnimeCardGridProps) => {
                 />
               )}
             </AnimatePresence>
-            <AnimeCard anime={anime} />
+            <AnimeCard anime={anime} index={index} />
           </Link>
         ))}
       </div>
