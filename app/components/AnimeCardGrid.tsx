@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import AnimeCard from "./AnimeCard";
+import LoadMore from "./LoadMore";
 
 interface AnimeCardGridProps {
   animes: AnimeData[];
