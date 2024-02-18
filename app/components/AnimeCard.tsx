@@ -1,8 +1,5 @@
-import Image from "next/image";
-import { Rating } from "@smastrom/react-rating";
 import { motion } from "framer-motion";
-
-import "@smastrom/react-rating/style.css";
+import Image from "next/image";
 
 interface AnimeCardProps {
   anime: AnimeData;
@@ -38,15 +35,13 @@ const AnimeCard = (props: AnimeCardProps) => {
           height={200}
         />
         <div className="flex flex-col justify-evenly  gap-1">
-          <div className="text-primary-300 tracking-wide">{anime.title}</div>
-          <div>{anime.rating}</div>
+          <div className="text-primary-400 tracking-wide">{anime.title}</div>
+          <div className="text-slate-400">{anime.rating}</div>
           <div className="line-clamp-2">{anime.synopsis}</div>
-          <Rating
-            readOnly
-            value={anime.score}
-            items={10}
-            className="max-w-[50%]"
-          />
+          <div className="flex flex-row items-center gap-2">
+            <div className="text-xl">⭐</div>
+            <div className="text-primary-400">{anime.score}</div>
+          </div>
         </div>
       </div>
     </motion.div>
