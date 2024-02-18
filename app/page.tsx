@@ -1,5 +1,5 @@
 import { BASE_URL } from "../utils/constants";
-import AnimeCard from "./components/AnimeCard";
+import AnimeCardGrid from "./components/AnimeCardGrid";
 
 const fetchAnime = async () => {
   const response = await fetch(`${BASE_URL}/top/anime?page=1&limit=20`);
@@ -13,11 +13,7 @@ export default async function Home() {
   return (
     <main>
       <div className="sm:px-10 md:px-20 lg:px-32 xl:px-40">
-        <section className="grid gap-4 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-          {animeData.map((anime) => (
-            <AnimeCard key={anime.mal_id} anime={anime} />
-          ))}
-        </section>
+        <AnimeCardGrid animes={animeData} />
       </div>
     </main>
   );

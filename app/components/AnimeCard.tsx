@@ -1,25 +1,29 @@
 import Image from "next/image";
-
 interface AnimeCardProps {
-  key: string | number;
   anime: AnimeData;
+  className?: string;
 }
 
 const AnimeCard = (props: AnimeCardProps) => {
-  const { anime } = props;
+  const { anime, className } = props;
   return (
-    <div className="flex cursor-pointer flex-col  items-start justify-center space-y-2 rounded-md px-2 py-4">
-      <Image
-        src={anime.images.jpg.large_image_url}
-        alt={anime.title}
-        width={200}
-        height={300}
-      />
-      <div className="flex flex-col justify-start">
-        <h3 className="text-lg font-bold">{anime.title}</h3>
-        <p className="text-sm">{anime.title_japanese}</p>
+    <div className="relative z-20 h-full w-full overflow-hidden rounded-2xl p-4 group-hover:border-slate-700">
+      <div className="z-50 flex gap-5">
+        <Image
+          src={anime.images.jpg.image_url}
+          alt={anime.title}
+          width={100}
+          height={200}
+        />
+        <div className="flex flex-col gap-1">
+          <div className="tracking-wide text-lime-300">{anime.title}</div>
+          <div>{anime.rating}</div>
+          <div>{anime.score}</div>
+          <div className="line-clamp-2">{anime.synopsis}</div>
+        </div>
       </div>
     </div>
   );
 };
+
 export default AnimeCard;
