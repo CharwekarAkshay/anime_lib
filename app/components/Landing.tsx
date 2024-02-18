@@ -1,8 +1,8 @@
 "use client";
-import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/utils/cn";
-import { FaChevronDown } from "react-icons/fa";
+import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
+import AnimatedDownArrow from "./AnimatedDownArrow";
 
 const Landing = () => {
   return (
@@ -18,9 +18,7 @@ const Landing = () => {
             <Image src="/home.png" width={700} height={700} alt="GokuVsLuffy" />
           </motion.div>
         </AnimatePresence>
-        <div className="">
-          <FaChevronDown className="text-primary-500 text-2xl" />
-        </div>
+        <AnimatedDownArrow />
       </div>
       <div className="relative hidden md:block lg:block xl:block">
         <LandingContainer>
@@ -38,7 +36,7 @@ const Landing = () => {
           </motion.h1>
         </LandingContainer>
         <div className="absolute bottom-20 left-[50%] -translate-x-1/2 transform">
-          <FaChevronDown className="text-primary-500 text-2xl" />
+          <AnimatedDownArrow />
         </div>
       </div>
     </>
