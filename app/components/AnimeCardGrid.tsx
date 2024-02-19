@@ -58,7 +58,7 @@ const AnimeCardGrid = (props: AnimeCardGridProps) => {
       <div className="grid grid-cols-1 py-10  md:grid-cols-2  lg:grid-cols-3">
         {animeData.map((anime, index) => (
           <Link
-            href={anime.title}
+            href={`anime/${anime.mal_id}`}
             key={anime.mal_id}
             className="group relative block h-full w-full p-2"
             onMouseEnter={() => setHoveredIndex(index)}
