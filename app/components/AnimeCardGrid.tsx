@@ -47,7 +47,7 @@ const AnimeCardGrid = (props: AnimeCardGridProps) => {
 
   return (
     <>
-      <div className="bg-primary-background sticky top-0 z-50 flex flex-row items-center gap-2 px-2 py-5">
+      <div className="bg-color-background sticky top-0 z-50 flex flex-row items-center gap-2 px-2 py-5">
         <div className="text-5xl">Top Trending</div>
         <motion.div
           className="bg-primary-500 h-2 flex-1 origin-left rounded-lg"

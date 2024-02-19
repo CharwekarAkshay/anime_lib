@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={clsx(
-          "min-h-screen bg-primary-background leading-relaxed text-zinc-300 antialiased",
+          "min-h-screen bg-color-background leading-relaxed text-zinc-300 antialiased theme-emerald",
           roboto.className,
         )}
       >
