@@ -1,14 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Roboto } from "next/font/google";
 import "./globals.css";
-import clsx from "clsx";
-
-const roboto = Roboto({
-  subsets: ["latin", "latin-ext"],
-  weight: ["100", "300", "400", "500", "700"],
-  style: ["normal", "italic"],
-});
 
 export const metadata: Metadata = {
   title: "Anime Lover Library",
@@ -20,16 +11,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body
-        className={clsx(
-          "min-h-screen bg-color-background leading-relaxed text-zinc-300 antialiased theme-emerald",
-          roboto.className,
-        )}
-      >
-        {children}
-      </body>
-    </html>
-  );
+  return <html lang="en">{children}</html>;
 }

@@ -16,6 +16,19 @@
     --color-primary-900: theme("colors.indigo.900");
   }
 
+  .theme-stone {
+    --color-background: theme("colors.slate.900");
+    --color-primary-100: theme("colors.stone.100");
+    --color-primary-200: theme("colors.stone.200");
+    --color-primary-300: theme("colors.stone.300");
+    --color-primary-400: theme("colors.stone.400");
+    --color-primary-500: theme("colors.stone.500");
+    --color-primary-600: theme("colors.stone.600");
+    --color-primary-700: theme("colors.stone.700");
+    --color-primary-800: theme("colors.stone.800");
+    --color-primary-900: theme("colors.stone.900");
+  }
+
   .theme-red {
     --color-background: theme("colors.slate.900");
     --color-primary-100: theme("colors.red.100");
