@@ -39,7 +39,7 @@ const FabThemeChanger = (props: FabThemeChangerProps) => {
               animate="visible"
               exit="exit"
             >
-              {themes.map((theme, index) => (
+              {themes.map((theme) => (
                 <motion.div
                   key={theme}
                   className={cx(
