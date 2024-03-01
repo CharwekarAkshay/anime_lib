@@ -4,7 +4,7 @@ import { AnimatePresence, motion, useInView, useScroll } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { MdErrorOutline } from "react-icons/md";
-import { fetchAnime } from "../actions";
+import { fetchAnimes } from "../actions";
 import AnimeCard from "./AnimeCard";
 import Spinner from "./Spinner";
 
@@ -31,7 +31,7 @@ const AnimeCardGrid = (props: AnimeCardGridProps) => {
 
   useEffect(() => {
     if (isInView && !isError) {
-      fetchAnime(currentPage)
+      fetchAnimes(currentPage)
         .then((res: AnimePaginatedResponse) => {
           const animeDataResponse = res.data;
           setAnimeData([...animeData, ...animeDataResponse]);

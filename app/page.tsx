@@ -2,7 +2,7 @@
 import cx from "clsx";
 import { Roboto } from "next/font/google";
 import { useEffect, useState } from "react";
-import { fetchAnime } from "./actions";
+import { fetchAnimes } from "./actions";
 import AnimeCardGrid from "./components/AnimeCardGrid";
 import FabThemeChanger from "./components/FabThemeChanger";
 import Landing from "./components/Landing";
@@ -49,7 +49,7 @@ export default function Home() {
     const getData = async () => {
       try {
         setLoading(true);
-        const anime = await fetchAnime(1);
+        const anime = await fetchAnimes(1);
         setAnimeData(anime.data);
       } catch (err: Error | any) {
         setLoading(false);

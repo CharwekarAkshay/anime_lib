@@ -90,31 +90,53 @@ interface AnimeData {
     timezone: null | string;
     string: null | string;
   };
-  producers: any[];
-  licensors: any[];
-  studios: {
-    mal_id: number;
-    type: string;
-    name: string;
-    url: string;
-  }[];
-  genres: {
-    mal_id: number;
-    type: string;
-    name: string;
-    url: string;
-  }[];
-  explicit_genres: any[];
-  themes: {
-    mal_id: number;
-    type: string;
-    name: string;
-    url: string;
-  }[];
-  demographics: {
-    mal_id: number;
-    type: string;
-    name: string;
-    url: string;
-  }[];
+  producers: AnimeProducer[];
+  licensors: AnimeLicensor[];
+  studios: AnimeStudios[];
+  genres: AnimeGenre[];
+  explicit_genres: AnimeGenre[];
+  themes: AnimeTheme[];
+  demographics: AnimeDemographic[];
+}
+
+interface AnimeProducer {
+  mal_id: number;
+  type: string;
+  name: string;
+  url: string;
+}
+
+interface AnimeLicensor {
+  mal_id: number;
+  type: string;
+  name: string;
+  url: string;
+}
+
+interface AnimeStudios {
+  mal_id: number;
+  type: string;
+  name: string;
+  url: string;
+}
+
+interface AnimeGenre {
+  mal_id: number;
+  type: string;
+  name: string;
+  url: string;
+}
+
+interface AnimeTheme {
+  mal_id: number;
+  type: string;
+  name: string;
+  url: string;
+}
+
+interface AnimeDemographic {
+  mal_id: number;
+  type: string;
+  name: string;
+  url: string;
 }
